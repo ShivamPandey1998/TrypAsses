@@ -19,9 +19,14 @@ interface Booking {
     const minutesAgo = Math.floor((Date.now() - time.getTime()) / 60000);
     if (minutesAgo < 60) {
       return `${minutesAgo} minutes ago`;
-    } else {
+    } else if (minutesAgo < 1440) {
       const hoursAgo = Math.floor(minutesAgo / 60);
       return `${hoursAgo} hours ago`;
+    } else if (minutesAgo < 2880) {
+      return '1 day ago';
+    } else {
+      const daysAgo = Math.floor(minutesAgo / 1440);
+      return `${daysAgo} days ago`;
     }
   };
   
