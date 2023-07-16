@@ -26,7 +26,7 @@ import { bookingsData } from './data';
 const DataTable: React.FC<DataTableProps> = ({ headers, caption, sorting, pagination, searchable }) => {
   const [data, setData] = useState<Booking[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5;
+  const itemsPerPage = 10;
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
   const [sortColumn, setSortColumn] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState<string>('');
